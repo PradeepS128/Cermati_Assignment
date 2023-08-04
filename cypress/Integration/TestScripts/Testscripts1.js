@@ -49,7 +49,7 @@ it("Access a Product via Search",()=>{
     cy.uncaught_exception() //Check for uncaught exceptions in the Cypress test.
     cy.visit("https://www.ebay.com/")       //Navigate to eBay's homepage.
     cy.xpath('//input[@placeholder="Search for anything"]').type('MacBook')  //Type 'MacBook' into the search input.
-    cy.get('#gh-cat').select('Computers/Tablets & Networking') //Select the category 'Computers/Tablets & Networking'.
+    cy.get('#gh-cat').select('Computers/Tablets & Networking',{force: true}) //Select the category 'Computers/Tablets & Networking'.
     cy.xpath('//input[@type="submit"]').click() //Click the search submit button.
     cy.wait(5000) //Wait 5 seconds for the  page to load
     cy.get('#item243d47d629 > .s-item__wrapper > .s-item__info > .s-item__link > .s-item__title > [role="heading"] > .BOLD').first().invoke('text').then((name)=>{
