@@ -39,7 +39,10 @@ cy.wait(3000)
 cy.contains('Item Location').click({waitForAnimations:false}) // Item location
 cy.get('.x-overlay__wrapper--left').scrollIntoView() // to scroll up
 cy.xpath('//input[@value="Worldwide"]').click() // wordwide radio button in item location
-cy.get('.x-tray__count').should('have.text','(3) Filter(s) selected') // performing an assertion to check if the filter tag is displayed correctly.
+cy.get('.x-tray__count').should('have.text','(3) Filter(s) selected') // performing an assertion to Verify that the filter tags are applied.
+cy.get('.x-overlay-footer__apply-btn').click()
+cy.get('.b-pageheader__text').should('have.text','5.5 - 5.9 Inch Cell Phones & Smartphones between US $100.00 and US $500.00') // Verified that the filter tags are applied.
+
 })
 
 it("Access a Product via Search",()=>{
